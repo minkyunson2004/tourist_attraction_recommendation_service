@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맞춤 여행지 추천</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>나만의 맞춤 여행지 찾기</h1>
+        <form id="travelForm" action="/result" method="post">
+            <label for="gender">성별:</label>
+            <select id="gender" name="gender">
+                <option value="0">남성</option>
+                <option value="1">여성</option>
+            </select>
+            <br>
+            <label for="age">나이:</label>
+            <select id="age" name="age">
+                <option value="10">10대</option>
+                <option value="20">20대</option>
+                <option value="30">30대</option>
+                <option value="40">40대</option>
+                <option value="50">50대</option>
+                <option value="60">60대 이상</option>
+            </select>
+            <br>
+            <label for="travel_accompany">성별:</label>
+            <select id="travel_accompany" name="travel_accompany">
+                <option value="0">나혼자 여행</option>
+                <option value="1">2인 여행(가족외)</option>
+                <option value="2">2인 가족 여행</option>
+                <option value="3">3인 이상 여행(가족외)</option>
+                <option value="4">부모 동반 여행</option>
+                <option value="5">자녀 동반 여행</option>
+                <option value="6">친척 포함 3인 여행</option>
+                <option value="7">3대 동반 여행</option>
+            </select>
+            <br>
+            <label for="travel_style1">자연 vs 도시:</label>
+            <select id="travel_style1" name="travel_style1">
+                <option value="1">자연 매우 선호</option>
+                <option value="2">자연 대체로 선호</option>
+                <option value="3">자연 약간 선호</option>
+                <option value="4">중립</option>
+                <option value="5">도시 약간 선호</option>
+                <option value="6">도시 대체로 선호</option>
+                <option value="7">도시 매우 선호</option>
+            </select>
+            <br>
+            <label for="travel_style2">휴양/휴식 vs 체험 활동:</label>
+            <select id="travel_style2" name="travel_style2">
+                <option value="1">휴식 매우 선호</option>
+                <option value="2">휴식 대체로 선호</option>
+                <option value="3">휴식 약간 선호</option>
+                <option value="4">중립</option>
+                <option value="5">체험 활동 약간 선호</option>
+                <option value="6">체험 활동 대체로 선호</option>
+                <option value="7">체험 활동 매우 선호</option>
+            </select>
+            <br>
+            <label for="travel_style3">대중적이지 않은 관광지 vs 유명한 관광지:</label>
+            <select id="travel_style3" name="travel_style3">
+                <option value="1">전자를 매우 선호</option>
+                <option value="2">전자를 대체로 선호</option>
+                <option value="3">전자를 약간 선호</option>
+                <option value="4">중립</option>
+                <option value="5">후자를 약간 선호</option>
+                <option value="6">후자를 대체로 선호</option>
+                <option value="7">후자를 매우 선호</option>
+            </select>
+            <br>
+            <label for="travel_style4">사진 촬영 중요도:</label>
+            <select id="travel_style4" name="travel_style4">
+                <option value="1">매우 비중요</option>
+                <option value="2">대체로 비중요</option>
+                <option value="3">약간 비중요</option>
+                <option value="4">중립</option>
+                <option value="5">약간 중요</option>
+                <option value="6">대체로 중요</option>
+                <option value="7">매우 중요</option>
+            </select>
+            <br>
+            <button type="button" onclick="sendInformation()">여행지 추천</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        function sendInformation() {
+            document.getElementById("travelForm").submit();
+        }
+    </script>
+</body>
+</html>
